@@ -27,6 +27,7 @@ class C4GAutomator extends \System
     public function __construct()
     {
         parent::__construct();
+        self::log('Purged the con4gis cache', __METHOD__, TL_CRON);
     }
 
     /**
@@ -39,7 +40,7 @@ class C4GAutomator extends \System
         $objFolder->purge();
 
         // Add a log entry
-        self::log('Purged the con4gis cache', __METHOD__, TL_CRON);
+
     }
 
 }
