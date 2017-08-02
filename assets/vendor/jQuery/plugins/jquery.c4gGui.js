@@ -1251,9 +1251,13 @@ this.c4g = this.c4g || {};
         var _that = this;
         return this.each(function () {
 
-            // if no ID is provided then initialize internal ID for DIVs
-            if (typeof(options.id) == 'undefined') {
-                options.id = nextId;
+    var fnDataTableColumnVis = function(dataTable) {
+      if ((typeof(dataTable) != 'undefined') && (dataTable!=null)) {
+        var settings = dataTable.fnSettings();
+        if (settings!=null) {
+          $(settings.aoColumns).each(function(i,element){
+            if (typeof(element.c4gMinTableSize)!='undefined') {
+              dataTable.fnSetColumnVis(i,element.bVisible && dataTable.width()>=element.c4gMinTableSize, false);
             }
 
             if (options.jquiBreadcrumb || options.jquiButtons || options.jquiEmbeddedDialogs) {
@@ -1298,41 +1302,19 @@ this.c4g = this.c4g || {};
                 .attr('class', 'c4gGuiHeadline')
                 .appendTo($(this));
 
-            // add Buttons Area
-            buttonDiv = $('<div />')
-                .attr('id', 'c4gGuiButtons' + options.id)
-                .attr('class', 'c4gGuiButtons')
-                .appendTo($(this));
-            $(buttonDiv).hide();
+      if (typeof(options.titel) != 'undefined') {
+        $('<h1 id="c4gGuiTitle">'+options.title+'</h1>').appendTo($(this));
+      }
 
-            // add navigation
-            if (options.navPanel) {
-                $('<div />')
-                    .attr('id', 'c4gGuiNavigation' + options.id)
-                    .attr('class', 'c4gGuiNavigation')
-                    .appendTo($(this));
-            }
+      if (typeof(options.subtitle) != "undefined") {
+          $('<h3 id="c4gGuiSubtitle"> </h3>').appendTo($(this));
+      }
 
-            // create DIV for ajax Message
-            $(this).append('<div class="c4gLoaderPh"></div>');
-            $(document).ajaxStart(function () {
-                $('.c4gGui,.c4gGuiDialog').addClass('c4gGuiAjaxBusy');
-                $('.c4gLoaderPh').addClass('c4gLoader');
-            });
-            $(document).ajaxStop(function () {
-                $('.c4gGui,.c4gGuiDialog').removeClass('c4gGuiAjaxBusy');
-                $('.c4gLoaderPh').removeClass('c4gLoader');
-            });
-
-            // create DIV for content
-            $('<div />')
-                .attr('id', 'c4gGuiContent' + options.id)
-                .attr('class', 'c4gGuiContent')
-                .appendTo(
-                    $('<div />')
-                        .attr('id', 'c4gGuiContentWrapper' + options.id)
-                        .attr('class', 'c4gGuiContentWrapper')
-                        .appendTo(this));
+      // add Breadcrumb Area
+      $('<div />')
+        .attr('id', 'c4gGuiBreadcrumb'+options.id)
+        .attr('class', 'c4gGuiBreadcrumb')
+        .appendTo($(this));
 
             // create DIV for dialogs
             $('<div />')

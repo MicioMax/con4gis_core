@@ -17,7 +17,7 @@
     $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['BACK']   = 'Back';
     $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['CANCEL'] = 'Cancel';
 
-    $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['TITLESUB'] = 'Content Management for geographical information systems';
+    $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['TITLESUB'] = 'Contao for geographical information systems';
 //@todo: shorter!
 // $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INTRO'] 				= 'We want to make publishing maps and mapping projects more easy. con4gis offers an easy way to integrate maps into websites using the OpenLayers library.</br></br>
 // Building a GIS website without any programming knowledge becomes simple with con4gis and Contao.';
