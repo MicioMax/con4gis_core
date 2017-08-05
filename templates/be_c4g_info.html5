@@ -5,12 +5,10 @@
 </div>
 
 <br><br>
-<!-- ToDo styling and text
 <div id="c4g_intro">
     <div><?php echo $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INTRO'] ?></div>
-
+    <img src="system/modules/con4gis_core/assets/images/comingsoon.png" width="300" height="75" alt="coming_soon">
 </div>
--->
 <div class="tl_formbody_edit c4g_info">
 
     <fieldset id="pal_c4g_core" class="tl_box">
@@ -81,11 +79,13 @@
                     )); ?>
                 <?php endif; ?>
             <?php else: ?>
+                <?php if (version_compare( VERSION, '4', '<' )):?>
                 <?php echo C4GHTMLFactory::imgLink( array(
                     c4gImg      => 'install',
                     href        => \Environment::get('script') . '?do=repository_catalog&view=con4gis_forum',
                     label       => sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INSTALL'], 'con4gis_forum')
                 )); ?>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     </fieldset>
@@ -118,12 +118,14 @@
                     label       => $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['MEMBERGROUPSYNCTOOL']
                 )); ?>
             <?php else: ?>
+                <?php if (version_compare( VERSION, '4', '<' )):?>
                 <?php echo C4GHTMLFactory::imgLink( array(
                     c4gImg      => 'install',
                     href        => \Environment::get('script') . '?do=repository_catalog&view=con4gis_groups',
                     label       => sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INSTALL'], 'con4gis_groups')
 
                 )); ?>
+                <?php endif; ?>
             <?php endif; ?>
         <!--
         <img src="system/modules/con4gis_core/assets/images/comingsoon.png" width="300" height="75" alt="coming_soon">
@@ -165,11 +167,13 @@
                     )); ?>
                 <?php endif; ?>
             <?php else: ?>
+               <?php if (version_compare( VERSION, '4', '<' )):?>
                 <?php echo C4GHTMLFactory::imgLink( array(
                     c4gImg      => 'install',
                     href        => \Environment::get('script') . '?do=repository_catalog&view=con4gis_maps',
                     label       => sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INSTALL'], 'con4gis_maps')
                 )); ?>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     </fieldset>
@@ -190,16 +194,16 @@
                     label       => $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['GITHUB']
                 )); ?>
             <?php else: ?>
+                <?php if (version_compare( VERSION, '4', '<' )):?>
                 <?php echo C4GHTMLFactory::imgLink( array(
                     c4gImg      => 'install',
                     href        => \Environment::get('script') . '?do=repository_catalog&view=con4gis_projects',
                     label       => sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INSTALL'], 'con4gis_projects')
 
                 )); ?>
+                <?php endif; ?>
             <?php endif; ?>
-        <!--
-        <img src="system/modules/con4gis_core/assets/images/comingsoon.png" width="300" height="75" alt="coming_soon">
-        -->
+        <!--<img src="system/modules/con4gis_core/assets/images/comingsoon.png" width="300" height="75" alt="coming_soon">-->
         </div>
     </fieldset>
 
@@ -226,11 +230,13 @@
                     label       => $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['GITHUB']
                 )); ?>
             <?php else: ?>
+                <?php if (version_compare( VERSION, '4', '<' )):?>
                 <?php echo C4GHTMLFactory::imgLink( array(
                     c4gImg      => 'install',
                     href        => \Environment::get('script') . '?do=repository_catalog&view=con4gis_tracking',
                     label       => sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INSTALL'], 'con4gis_tracking')
                 )); ?>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     </fieldset>
@@ -265,11 +271,13 @@
             label       => $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['PLAYSTORE']
             )); ?>
             <?php else: ?>
+            <?php if (version_compare( VERSION, '4', '<' )):?>
             <?php echo C4GHTMLFactory::imgLink( array(
                     c4gImg      => 'install',
             href        => \Environment::get('script') . '?do=repository_catalog&view=con4gis_tracking_android',
             label       => sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INSTALL'], 'con4gis_tracking_android')
             )); ?>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
     </fieldset>
@@ -345,7 +353,7 @@
     <!-- <img src="system/modules/con4gis_core/assets/images/con4gis_info_head.png" width="741" height="100" alt="con4gis_info_head"> -->
     <span><?php
         echo sprintf( $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['FOOTER'],
-                         '<a href="https://kuestenschmiede.de" target="_blank">K&uuml;stenschmiede</a>'
+                 '<a href="https://kuestenschmiede.de" target="_blank">K&uuml;stenschmiede</a>'
             );
     ?></span>
 </div>
