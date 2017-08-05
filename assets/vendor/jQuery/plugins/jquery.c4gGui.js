@@ -1198,7 +1198,7 @@ this.c4g = this.c4g || {};
         if (settings!=null) {
           $(settings.aoColumns).each(function(i,element){
             if (typeof(element.c4gMinTableSize)!='undefined') {
-              dataTable.fnSetColumnVis(i,dataTable.width()>=element.c4gMinTableSize, false);
+              dataTable.fnSetColumnVis(i,element.bVisible && dataTable.width()>=element.c4gMinTableSize, false);
             }
             if (typeof(element.c4gMinTableSizeWidths)!='undefined') {
               // set table size dependant column widths
@@ -1270,9 +1270,10 @@ this.c4g = this.c4g || {};
       if (typeof(options.titel) != 'undefined') {
         $('<h1 id="c4gGuiTitle">'+options.title+'</h1>').appendTo($(this));
       }
-      $('<h3 id="c4gGuiSubtitle"> </h3>').appendTo($(this));
 
-
+      if (typeof(options.subtitle) != "undefined") {
+          $('<h3 id="c4gGuiSubtitle"> </h3>').appendTo($(this));
+      }
 
       // add Breadcrumb Area
       $('<div />')

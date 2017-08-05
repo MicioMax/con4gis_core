@@ -18,9 +18,7 @@
     $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['CANCEL'] = 'Peruuta';
 
     $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['TITLESUB'] = 'Sisältö-Manageri Geo-Informaatio-Systeemiä varten';
-//@todo: shorter!
-// $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INTRO'] 				= 'Haluamme tehdä karttojen julkaisusta ja mapping projekteisa helpompia. con4gis tarjoaa helpon tavan integroida kartat nettisivuiksi käyttäen Openlayers kirjastoa.</br></br>
-// GIS nettisivujen rakentaminen ilman ohjelmointitaitoja tulee helpommaksi con4gis ja Contao ohjelmalla.';
+    $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['INTRO'] = 'con4gis4';
     $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['FOOTER'] = '%s Projekti.';
 
     $GLOBALS['TL_LANG']['MSC']['C4G_BE_INFO']['MIGRATION']['HEADLINE']      = 'Migration (cfs_%1$s -> con4gis_%1$s)';
