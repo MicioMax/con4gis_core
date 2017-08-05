@@ -13,7 +13,7 @@
 
 $GLOBALS['con4gis_core_extension']['installed'] = true;
 $GLOBALS['con4gis_core_extension']['version']   = '1.9.0';
-$GLOBALS['con4gis_core_extension']['con4gis_version'] = 'v3.8';
+$GLOBALS['con4gis_core_extension']['con4gis_version'] = 'v3.9';
 
 // API-Registration
 $GLOBALS['TL_API'] = array();
