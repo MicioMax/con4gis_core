@@ -43,4 +43,8 @@ CKEDITOR.editorConfig = function( config ) {
 	config.extraPlugins = 'justify,fileUpload,panelbutton,floatpanel,colorbutton,blockquote,youtube,smiley,sourcedialog,image2,codesnippet';
 	config.image_previewText = ' ';
 	config.autoParagraph = false;
+	
+	// do not use <p> on enter, but <br />
+	config.enterMode = CKEDITOR.ENTER_BR;
+	config.shiftEnterMode = CKEDITOR.ENTER_P;
 };
