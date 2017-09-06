@@ -138,7 +138,10 @@ class C4GUtils
       }
 
       $eMail->subject = $mailData['subject'];
-      $eMail->text = $mailData['text'];
+      if(isset(mailData['text'])
+        $eMail->text = $mailData['text'];
+      if(isset(mailData['html'])
+        $eMail->html = $mailData['html'];
       $eMail->sendTo($mailData['to']);
       unset($eMail);
     } catch ( Swift_RfcComplianceException $e ) {
