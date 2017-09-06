@@ -10,12 +10,12 @@ class C4GFileUpload {
     public function generate() {
         try {
             define("TL_MODE", "FE");
-define("TL_SCRIPT", "SOMETHING");
+			define("TL_SCRIPT", "SOMETHING");
 //            $sRootPath = dirname($_SERVER['SCRIPT_FILENAME']) . "/../../../../../";
 //            require_once($sRootPath . "system/initialize.php");
-            $initialize = $_SERVER["DOCUMENT_ROOT"].'/system/initialize.php';
+            $initialize = $_SERVER["DOCUMENT_ROOT"] . '/../system/initialize.php';
             if (!file_exists($initialize)) {
-                $initialize = '../../../../../system/initialize.php';
+                $initialize = '../system/initialize.php';
             }
 
             // Initialize the system
@@ -84,7 +84,7 @@ define("TL_SCRIPT", "SOMETHING");
             //config array
             $aConfig = array(
                 'maxsize' => intval($sMaxFileSize),          // maximum file size, in KiloBytes (2 MB)
-                'type'    => explode(",", $sValidFileTypes)        // allowed extensions
+                'type'    => explode(",", strtoupper($sValidFileTypes))        // allowed extensions
             );
 
             $sReturn         = '';
@@ -113,7 +113,7 @@ define("TL_SCRIPT", "SOMETHING");
                 $sType       = $sExtension['extension'];       // gets extension
 
                 // Checks if the file has allowed type, size, width and height (for images)
-                if (!in_array($sType, $aConfig['type'])) {
+                if (!in_array(strtoupper($sType), $aConfig['type'])) {
                     $sError = sprintf($GLOBALS['TL_LANG']['MSC']['C4G_ERROR']['file_upload_invalid_extension'], $_FILES['uploadFile']['name']);
                 }elseif ($_FILES['uploadFile']['size'] > $aConfig['maxsize']) {
                     $sError = sprintf($GLOBALS['TL_LANG']['MSC']['C4G_ERROR']['file_upload_invalid_size'], ($sMaxFileSize / 1024));
